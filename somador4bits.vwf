@@ -207,7 +207,14 @@ TRANSITION_LIST("somador4bits|A[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 7;
+			LEVEL 0 FOR 64.0;
+			LEVEL 1 FOR 64.0;
+		}
+		LEVEL 0 FOR 64.0;
+		LEVEL 1 FOR 40.0;
 	}
 }
 
@@ -216,7 +223,14 @@ TRANSITION_LIST("somador4bits|A[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 15;
+			LEVEL 0 FOR 32.0;
+			LEVEL 1 FOR 32.0;
+		}
+		LEVEL 0 FOR 32.0;
+		LEVEL 1 FOR 8.0;
 	}
 }
 
@@ -225,7 +239,13 @@ TRANSITION_LIST("somador4bits|A[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 31;
+			LEVEL 0 FOR 16.0;
+			LEVEL 1 FOR 16.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -234,7 +254,13 @@ TRANSITION_LIST("somador4bits|A[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 62;
+			LEVEL 0 FOR 8.0;
+			LEVEL 1 FOR 8.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -243,7 +269,14 @@ TRANSITION_LIST("somador4bits|B[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 15;
+			LEVEL 0 FOR 32.0;
+			LEVEL 1 FOR 32.0;
+		}
+		LEVEL 0 FOR 32.0;
+		LEVEL 1 FOR 8.0;
 	}
 }
 
@@ -252,7 +285,13 @@ TRANSITION_LIST("somador4bits|B[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 31;
+			LEVEL 0 FOR 16.0;
+			LEVEL 1 FOR 16.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -261,7 +300,13 @@ TRANSITION_LIST("somador4bits|B[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 62;
+			LEVEL 0 FOR 8.0;
+			LEVEL 1 FOR 8.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -270,7 +315,12 @@ TRANSITION_LIST("somador4bits|B[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 125;
+			LEVEL 0 FOR 4.0;
+			LEVEL 1 FOR 4.0;
+		}
 	}
 }
 
@@ -279,7 +329,12 @@ TRANSITION_LIST("somador4bits|C")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 125;
+			LEVEL 0 FOR 4.0;
+			LEVEL 1 FOR 4.0;
+		}
 	}
 }
 
@@ -288,7 +343,12 @@ TRANSITION_LIST("somador4bits|Cin")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		NODE
+		{
+			REPEAT = 125;
+			LEVEL 0 FOR 4.0;
+			LEVEL 1 FOR 4.0;
+		}
 	}
 }
 
@@ -297,7 +357,14 @@ TRANSITION_LIST("somador4bits|S[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 15;
+			LEVEL 0 FOR 32.0;
+			LEVEL 1 FOR 32.0;
+		}
+		LEVEL 0 FOR 32.0;
+		LEVEL 1 FOR 8.0;
 	}
 }
 
@@ -306,7 +373,13 @@ TRANSITION_LIST("somador4bits|S[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 31;
+			LEVEL 0 FOR 16.0;
+			LEVEL 1 FOR 16.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -315,7 +388,13 @@ TRANSITION_LIST("somador4bits|S[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 62;
+			LEVEL 0 FOR 8.0;
+			LEVEL 1 FOR 8.0;
+		}
+		LEVEL 0 FOR 8.0;
 	}
 }
 
@@ -324,7 +403,12 @@ TRANSITION_LIST("somador4bits|S[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 1000.0;
+		NODE
+		{
+			REPEAT = 125;
+			LEVEL 0 FOR 4.0;
+			LEVEL 1 FOR 4.0;
+		}
 	}
 }
 
