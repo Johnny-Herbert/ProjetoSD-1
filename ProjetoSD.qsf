@@ -38,10 +38,10 @@
 
 set_global_assignment -name FAMILY "Stratix II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY setar
+set_global_assignment -name TOP_LEVEL_ENTITY controle
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:09:35  DECEMBER 11, 2018"
-set_global_assignment -name LAST_QUARTUS_VERSION 9.1
+set_global_assignment -name LAST_QUARTUS_VERSION "9.1 SP2"
 set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE FASTEST
 set_global_assignment -name VERILOG_FILE meio_somador.v
@@ -53,12 +53,21 @@ set_global_assignment -name VERILOG_FILE somador4bits.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE somador4bits.vwf
 set_global_assignment -name VERILOG_FILE divisao2.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE divisao2.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE divisao2.vwf
 set_global_assignment -name VERILOG_FILE controle.v
 set_global_assignment -name VERILOG_FILE resetar.v
 set_global_assignment -name VERILOG_FILE setar.v
+set_global_assignment -name VERILOG_FILE contador.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE contador.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE setar.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE resetar.vwf
+set_global_assignment -name VERILOG_FILE registrador.v
+set_global_assignment -name VERILOG_FILE memoria.v
+set_global_assignment -name VERILOG_FILE ula.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE memoria.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
 set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name VECTOR_WAVEFORM_FILE controle.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE controle.vwf

@@ -1,43 +1,57 @@
-module controle (A, Op);
+module controle (clock, Op, tx, ty, tz, tula);
 
-input  [3:0]A;
-input  [2:0]Op; 
-reg overflow;
-reg [3:0]Y;
-//acumulador
-reg [3:0]X;
-//entrada
-reg [3:0]Z;
-//saida
-wire [3:0]CX,CY,CZ;
-//000 clear
-//001 carrega
-//010 mantem
-//011 add
-//100 divisao
-//101 display
- 
+input wire [2:0]Op; 
+input wire clock;
+
+output reg[3:0]tx;
+output reg[3:0]ty;
+output reg[3:0]tz;
+output reg[3:0]tula;
+
+//000 CLEARLD [1,0,0,x]
+//001 ADDLD   [1,1,2,0]
+//010 ADD     [0,1,2,0]
+//011 SHIFTR  [2,3,2,x]
+//100 DISPLAY [2,0,1,X]
+
+ always @(posedge clock)begin
 case(Op)
- 3'b000:begin
- setar S1 (X,X);
- setar S2 (Y,Y);
- setar S3 (Z,Z);
+
+  3'b000:begin		//CLEARLD  X=A  y=-  Z=-
+	tx = 4'b0001;
+	ty = 4'b0000;
+	tz = 4'b0000;
+	tula = 1'b0;
  end
- 3'b001:begin
- restar(CX,X);
- restar(CY,Y);
+ 
+   3'b001:begin		//ADDLD    X=B  y=A  Z=0
+	tx = 4'b0001;
+	ty = 4'b0001;
+	tz = 4'b0010;
+	tula = 1'b0;
  end
- 3'b010:begin
- overflow = 0;
+ 
+   3'b010:begin        //ADD     X=0  y=A+B  Z=0
+	tx = 4'b0000;
+	ty = 4'b0001;
+	tz = 4'b0010;
+	tula = 1'b0;
  end
- 3'b011:begin
-	somador4bits(X,Y,0,Y,overflow);
+ 3'b011:begin    //SHIFTR   X=0  Y=A+B/2  Z=0
+	tx = 4'b0010;
+	ty = 4'b0011;
+	tz = 4'b0010;
+	tula = 1'b0;
  end
- 3'b100:begin
-	divisao2(X,CX)
-end
- 3'b101:begin
-	overflow = 0;
+ 
+  3'b100:begin		//DISPLAY X=0  Y=0  Z=a+b/2;
+	tx = 4'b0010;
+	ty = 4'b0000;
+	tz = 4'b0001;
+	tula = 1'b0;
  end
 endcase 
-endmodule
+end
+
+endmodule 
+	
