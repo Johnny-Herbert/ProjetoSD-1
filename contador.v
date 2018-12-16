@@ -1,4 +1,3 @@
-
 module contador(clock, rco, S);
 input wire clock;
 output reg [3:0]S;
